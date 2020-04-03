@@ -18,3 +18,5 @@ class Total extends Component {
         )  
     }
 }
+
+export default Total;
