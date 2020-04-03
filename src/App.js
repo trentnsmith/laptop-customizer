@@ -75,9 +75,11 @@ class App extends Component {
       );
     });
 
-    const summary = Object.keys(this.state.selected).map((feature, idx) => {
+// moving to Cart.js
+    /*const summary = Object.keys(this.state.selected).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
       const selectedOption = this.state.selected[feature];
+*/
 
 // moving to CartItem.js
       /*return (
@@ -107,6 +109,7 @@ class App extends Component {
             <h2>Customize your laptop</h2>
             {features}
           </form>
+          //moving to Cart.js
           <section className="main__summary">
             <h2>Your cart</h2>
             {summary}
@@ -117,7 +120,7 @@ class App extends Component {
                 {USCurrencyFormat.format(total)}              
               </div>
             </div>
-            
+
           </section>
         </main>
       </div>
