@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 import './App.css';
 import CustomizeLaptop from './CustomizeLaptop';
 import Cart from './Cart';
-import CutomizeLaptop from './CustomizeLaptop';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
@@ -115,7 +114,7 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <CutomizeLaptop 
+          <CustomizeLaptop 
             selected={this.state.selected}
             updateFeature={this.updateFeature}
           />
