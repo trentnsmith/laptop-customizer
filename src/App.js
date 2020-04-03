@@ -44,11 +44,13 @@ class App extends Component {
   };
 
   render() {
+    // moving to CustomizeLaptop
     const features = Object.keys(this.props.features).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
       const options = this.props.features[feature].map(item => {
         const itemHash = slugify(JSON.stringify(item));
         return (
+          //moved to Options.js
           <div key={itemHash} className="feature__item">
             <input
               type="radio"
@@ -106,6 +108,7 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
+        //moving to CustomizeLaptop
           <form className="main__form">
             <h2>Customize your laptop</h2>
             {features}
