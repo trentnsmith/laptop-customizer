@@ -78,8 +78,9 @@ class App extends Component {
     const summary = Object.keys(this.state.selected).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
       const selectedOption = this.state.selected[feature];
-
-      return (
+      
+// moving to CartItem.js
+      /*return (
         <div className="summary__option" key={featureHash}>
           <div className="summary__option__label">{feature} </div>
           <div className="summary__option__value">{selectedOption.name}</div>
@@ -87,7 +88,7 @@ class App extends Component {
             {USCurrencyFormat.format(selectedOption.cost)}
           </div>
         </div>
-      );
+      );*/
     });
 
     const total = Object.keys(this.state.selected).reduce(
@@ -111,7 +112,7 @@ class App extends Component {
             <div className="summary__total">
               <div className="summary__total__label">Total</div>
               <div className="summary__total__value">
-                {USCurrencyFormat.format(total)}
+                {USCurrencyFormat.format(total)}              
               </div>
             </div>
           </section>
