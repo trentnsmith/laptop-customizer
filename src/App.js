@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
-import slugify from 'slugify';
-
+//import slugify from 'slugify';
 import './App.css';
+import CustomizeLaptop from './CustomizeLaptop';
+import Cart from './Cart';
+import CutomizeLaptop from './CustomizeLaptop';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
@@ -14,7 +15,10 @@ const USCurrencyFormat = new Intl.NumberFormat('en-US', {
 });
 
 class App extends Component {
-  state = {
+  
+  constructor(props) {
+    super(props)
+    this.state = {
     selected: {
       Processor: {
         name: '17th Generation Intel Core HB (7 Core with donut spare)',
@@ -34,6 +38,7 @@ class App extends Component {
       }
     }
   };
+}
 
   updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
@@ -43,7 +48,7 @@ class App extends Component {
     });
   };
 
-  render() {
+/*  render() {
     // moving to CustomizeLaptop
     const features = Object.keys(this.props.features).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
@@ -75,7 +80,7 @@ class App extends Component {
           </legend>
           {options}
         </fieldset>
-      );*/
+      );
     });
 
 // moving to Cart.js
@@ -93,7 +98,7 @@ class App extends Component {
             {USCurrencyFormat.format(selectedOption.cost)}
           </div>
         </div>
-      );*/
+      );
     });
 
 // moving to Total.js    
@@ -102,30 +107,21 @@ class App extends Component {
       0
     );*/
 
+    render () {
+
     return (
       <div className="App">
         <header>
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-        //moving to CustomizeLaptop
-          <form className="main__form">
-            <h2>Customize your laptop</h2>
-            {features}
-          </form>
-          //moving to Cart.js
-          <section className="main__summary">
-            <h2>Your cart</h2>
-            {summary}
-            // moving to Total.js
-            <div className="summary__total">
-              <div className="summary__total__label">Total</div>
-              <div className="summary__total__value">
-                {USCurrencyFormat.format(total)}              
-              </div>
-            </div>
-
-          </section>
+          <CutomizeLaptop 
+            selected={this.state.selected}
+            updateFeature={this.updateFeature}
+          />
+          <Cart 
+            selected={this.state.selected}
+          />
         </main>
       </div>
     );
