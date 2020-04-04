@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import './App.css';
 import CustomizeLaptop from './CustomizeLaptop';
 import Cart from './Cart';
+import FEATURES from './Features';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
@@ -117,6 +118,7 @@ class App extends Component {
           <CustomizeLaptop 
             selected={this.state.selected}
             updateFeature={this.updateFeature}
+            features={FEATURES}
             features={this.props.features}
           />
           <Cart 
