@@ -117,6 +117,7 @@ class App extends Component {
           <CustomizeLaptop 
             selected={this.state.selected}
             updateFeature={this.updateFeature}
+            features={this.props.features}
           />
           <Cart 
             selected={this.state.selected}
